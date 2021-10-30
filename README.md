@@ -12,7 +12,8 @@ This Website is a food delivery website where you can order a variety of dishes.
     3. JSON Database 
     4. User Authentication 
     5. Stores logged in users previous orders and displays on website
-    6. Responsive Webpage
+    6. Comment section to give feedback on project
+    7. Responsive Webpage
 
 The main home page is 'index.html'.  There are 5 futher subfolders
 + API - which is named app.js.
@@ -22,10 +23,30 @@ The main home page is 'index.html'.  There are 5 futher subfolders
 + Documentation - contains the read me file. 
 + JS files - such package.json and the test file
 
+## How To use:
 
-+START SERVER
+##### 1. Clone the repository to your local machine
+    gh repo clone SelAw432/Online-Food-System
+    
+##### 2. Cd into Project directory
+    cd Online-Food-System
+
+##### 3. Install all project dependencies
+    npm install
+
+##### 4. Start Server 
+    npm start
+    
+##### 5. You should see server listening at specific port on localhost
+    Listening at http://127.0.0.1:8090
+
+##### 6. Go to webpage and navigate towards homepage
+    http://127.0.0.1:8090
+
+##### 1. Start Server
 
     Please always remember to start the server, to avoid any errors. If Server crashes please restart it.
+        +    
 
 + LOGIN
 
