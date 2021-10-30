@@ -49,10 +49,10 @@ The main home page is 'index.html'.  There are 5 futher subfolders
 
 ### LOGIN
 
-When you start the Server, you will be directed to the login page. You have one of 3 options. 
-    -LOGIN
-    -REGISTER
-    -LOGIN AS A GUEST
+When you start the Server, you will be directed to the login page. You have one of 3 options.
++LOGIN
++REGISTER
++LOGIN AS A GUEST
 
 If you skip all three and redirect the page to the home page, you will automatically sign in as a GUEST.
 
