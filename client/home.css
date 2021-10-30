@@ -1,0 +1,1284 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav a{
+    text-decoration: none;
+    color: #eee;
+}
+/* _____________NAVIGATION BAR FORMATING__________ */
+.Navbar{
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+}
+
+.Navbar.custom{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.Navbar .container {
+    width: 100%;
+    margin: 0 auto;
+    
+}
+
+nav{
+    padding-top:5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+#menu-bar{
+    font-size: 3rem;
+    color:#666;
+    cursor: pointer;
+    display: none;
+}
+
+
+.logo{
+    font-size: 80px;
+    font-weight: 500;
+    font-family: 'Dancing Script', cursive;
+    
+}
+
+.logo .welcome{
+    text-transform: lowercase;
+}
+.logo #UserName{
+    font-size: 50px;
+    color: crimson;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+nav ul{
+    display: flex;
+}
+
+nav ul li{
+    list-style: none;
+}
+
+nav ul li a{
+    padding: 1rem 0;
+    margin: 0 3rem;
+    position: relative;
+    letter-spacing: 3px;
+}
+
+nav ul li a:last-child{
+    margin-right: 0;
+}
+
+nav ul li a::before,
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 2px;
+    background-color: crimson;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .5s;
+}
+
+nav ul li a::before{
+    top: 0;
+    transform-origin:left ;
+}
+
+nav ul li a::after{
+    bottom: 0;
+    transform-origin:right ;
+}
+
+nav ul li a:hover::before,
+nav ul li a:hover::after{
+    transform: scaleX(1);
+}
+
+@media (max-width:1200px){
+
+    html {
+        font-size: 50%;
+    }
+
+    #menu-bar{
+        display: block;
+        color: black;
+        font-size: 30px;
+        background-color: rgba(235, 123, 123, 0.3);
+    }
+
+    .Navbar .nar{
+        overflow: hidden;
+        position: fixed;
+        top: 15rem;
+        left: 0;
+        width: 100%;
+        border-top: .2rem solid rgba(0,0,0,.1);
+        transform:scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+        background-color: black;
+        margin-top: 10px;
+        
+    }
+
+    .Navbar ul{
+        flex-flow: column;
+        padding: 2rem;
+    }
+
+    .Navbar li{
+        margin: 1.5rem;
+        width: 100%;
+    }
+
+    .Navbar ul li a{
+        display: block;
+        padding-left: 2rem;
+        border-left: .2rem solid #FFFFFF;
+        width: 20%;
+    }
+
+    .fa-bars{
+        transform: rotate(180deg);
+    }
+
+    .Navbar .nar.nav-toggle {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+}
+
+
+/* ______________________HEADER__________________________ */
+
+.header .container{
+    min-height: 100vh;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    /* justify-content: center; */
+
+}
+
+.header{
+    background-image: url(images/header-img.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: 1;
+}
+
+.header::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .5;
+    z-index: -1;
+}
+
+.header h1{
+    display: block;
+    width: fit-content;
+    font-size: 4rem;
+    position: relative;
+    color: transparent;
+    animation: header_text_reveal .5s ease forwards;
+    animation-delay: 1.5s;
+}
+
+.header .container .text  {
+    display: block;
+}
+
+.header .btn {
+    display: inline-block;
+    padding:10px 30px;
+    letter-spacing: .1rem;
+    margin-top: 20px;
+    font-size: 2rem;
+}
+
+.header .btn a{
+    color: white;
+}
+
+.header .text h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: crimson;
+    width:0%;
+    height: 100%;
+    animation: header_text_anim_overflow 1s ease;
+    animation-delay: 1s;
+}
+
+
+@keyframes header_text_anim_overflow{
+    50%{
+        width:100%;
+        left:0%;
+    }
+
+    100% {
+        width: 0;
+        left:100%
+    }
+}
+
+@keyframes header_text_reveal{
+    100%{
+        color: white;
+    }
+}
+
+
+
+.boxes .bh {
+    z-index: 5;
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    background-color: rgba(110, 110, 110, 0.7);
+    font-size: 15px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    display: flex;
+    margin: -10% auto 20px auto ;
+    position: relative;
+    color: white;
+    text-align: center;    
+}
+
+.boxes .bh .ranks{
+    font-size: 130px;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(250, 78, 113);
+}
+
+.boxes .bh .ranks sup{
+    /* vertical-align: 500%; */
+    font-size:30px;
+    
+}
+
+@media (max-device-width: 990px){
+    .boxes .bh {
+        margin: 10% auto 20px auto ;
+   
+    }
+}
+
+/* ______________________About us( Please Change it a bit)____________ */
+
+ .about{
+     margin-top: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.about .image{
+    flex:1 1 40rem;
+    height:50rem;
+    background:url(../images/about-frame-img.png), url(../images/about-us.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: screen;
+}
+
+.about .content{
+    flex:1 1 40rem;
+    padding:2rem;
+}
+
+.about .content h3{
+    font-size: 4rem;
+    color:#333;
+}
+
+.about .content p{
+    font-size: 1.6rem;
+    color:#666;
+    padding:1rem 0;
+} 
+
+/* ______________________Quotes__________________________ */
+
+
+.quotes{
+    padding-top: 80px;
+    padding-left: 120px;
+    padding-right:100px;
+    padding-bottom: 50px;
+    margin-left: 100px;
+}
+
+
+.quotes p{
+    width: 200px;
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Roboto', sans-serif;
+}
+
+p.author{
+font-family: 'Sacramento', cursive;
+font-size: 15px;
+
+}
+.quotes img{
+    width: 150px;
+    height: 150px;
+    padding: 10px;
+    padding-left:45px;
+    margin: 10px;
+    padding-top: 30px;
+    align-items: center;
+    
+}
+@media (max-device-width: 550px){
+
+    .quotes{
+        
+        padding-right:10px;
+        margin-left: 10px;
+    }
+}
+
+
+
+/* __________________________Brands__________________________ */
+.brands{
+    padding: 100px;
+    margin: 100px;
+    border-top: 3px solid rgb(110, 110, 110);
+    border-bottom: 3px solid rgb(110, 110, 110);
+}
+
+.brands img{
+    width:165px;
+    height:145px;
+    opacity: 0.2;
+    padding: 30px;
+}
+
+.brands h2{
+    font-size: 40px;
+    color: rgb(165, 165, 165) ;
+    padding-bottom: 40px;
+    margin-left: -3%;
+}
+
+@media (max-device-width: 550px){
+
+    .brands{
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+
+/* _____________________Order History_______________________ */
+
+#PrevOrders {
+    
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 200px;
+}
+
+#PrevOrders .subtitle{
+    color: crimson; 
+    font-size: 30px; 
+}
+
+#PrevOrders h2{
+    font-size: 50px;
+    margin-bottom: 80px; 
+}
+
+#PrevOrders li{
+    font-size: 15px;
+    padding: 10px;
+}
+
+
+
+
+/* _____________________Service Offered_______________________ */
+
+.services {
+    
+    justify-content: center;
+    text-align: center;
+}
+
+.services .section-subtitle{
+    color: crimson; 
+    font-size: 30px; 
+}
+
+.services h2{
+    font-size: 50px;
+    margin-bottom: 80px; 
+}
+
+.services .services__content{
+    width:250px;
+    margin: 70px;
+    text-align: center;
+    margin-left: 100px
+}
+
+.services .services__img{
+    width: 64px;
+    height: 64px;
+    fill: crimson;
+    margin-bottom: 50px;
+}
+
+.services .services__title{
+    font-size: 30px;
+    color: rgb(110, 110, 110);
+}
+
+.services .services__description{
+    padding: 20px 10px 20px 5px;
+}
+
+/* ______________________Slide Show__________________________ */
+
+.carousel{
+
+    width: 100%;
+    height:600px;
+    position: relative;
+    overflow:hidden;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+
+.carousel-item img{
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+} 
+
+.carousel-text{
+    max-width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.3);
+    color: whitesmoke;
+    padding: 3rem 2rem;
+}
+
+.carousel-text h5{
+    font-size: 4rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 2rem;
+}
+
+.carousel-text p{
+    font-size: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.tips{
+    font-family: 'Satisfy', cursive;
+}
+
+ 
+
+/*________________________ Food _________________________*/
+
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    padding:0 .5rem;
+    color:#333;
+}
+
+.heading span{
+    color:crimson;
+}
+
+.food .menu li{
+    list-style: none;
+}
+
+.food .menu button{
+    font-size: 1.7rem;
+    padding:.7rem 4rem;
+    border-radius: 5rem;
+    margin-top: 1rem;
+    background:none;
+    color:#333;
+    cursor: pointer;
+    border:.2rem solid crimson;
+    margin-left: 100px;
+    width: 200px;
+    
+    
+    
+}
+.food .menu {
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+}
+.food .menu button:hover{
+    background:crimson;
+    color: white;
+}
+
+.food .menu .active button{
+    background:crimson;
+    color: white;
+}
+.food .menu {
+    display: flex;
+    border-top: .3rem dashed rgba(0,0,0,.2);
+    border-bottom: .3rem dashed rgba(0,0,0,.2);
+    align-items: center;
+    justify-content: center;
+    padding:1rem 0;
+    margin:2rem 0; 
+    
+}
+
+ .food {
+    position:relative;
+} 
+
+.food #checking-out button a{
+
+    font-size: 80px;
+    color: grey;
+}
+
+#content img {
+    width: 300px;
+    height: 320px;
+    object-fit: contain;
+    margin: 20px 30px 20px 30px;
+}
+
+#content{
+    list-style: none;
+}
+
+#content .meal{
+    width:800px;
+    height:600px;
+    font-size: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    margin: 20% auto 20px auto ;
+    position: relative;
+}
+
+#content .food_name h3{
+    padding: 10px 5px 2px 30px;
+    color: red;
+    font-family: 'Gruppo', cursive;
+    font-weight: 900;
+    word-spacing: 3px;
+    font-size: 30px;
+}
+
+#content .food_restaurant {
+    padding: 10px 5px 2px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    word-spacing: 3px;
+    font-size: 20px;
+}
+
+#content .food_price {
+    padding: 10px 5px 2px 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    word-spacing: 3px;
+    font-size: 15px;
+}
+
+#content button.btn-outline-success{
+    margin-left: 30px;
+    margin-right: 15px ;
+    width: 30px;
+    font-size: 15px;
+}
+
+#content button.btn-outline-danger{
+    margin-left: 15px;
+    width: 30px;
+    font-size: 15px;
+}
+
+@media (max-width:768px){
+
+    #content img {
+        width: 200px;
+        height: 200px;
+        object-fit: contain;
+        margin: 10px 10px 10px 20px;
+    }
+
+    #content .meal{
+        width:300px;
+        height:400px;
+        font-size: 15px;
+        border-radius: 20px;
+        box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+        margin: 20% auto 20px auto ;
+        position: relative;
+    }
+
+    #content .food_name h3{
+        padding: 10px 5px 2px 30px;
+        color: red;
+        font-family: 'Gruppo', cursive;
+        font-weight: 600;
+        word-spacing: 3px;
+        font-size: 20px;
+    }
+
+    #content .food_restaurant {
+        padding: 10px 5px 2px 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        word-spacing: 3px;
+        font-size: 15px;
+    }
+
+    #content .food_price {
+        padding: 10px 5px 2px 30px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 400;
+        word-spacing: 3px;
+        font-size: 10px;
+    }
+
+    #content button.btn-outline-success{
+        margin-left: 30px;
+        margin-right: 15px ;
+        width: 30px;
+        font-size: 10px;
+    }
+
+    #content button.btn-outline-danger{
+        margin-left: 15px;
+        width: 30px;
+        font-size: 10px;
+    }
+
+    .food #checking-out button a{
+
+        font-size: 50px;
+        color: grey;
+    }
+}
+
+.checkout h3.head{
+    border-top: .3rem dashed rgba(0,0,0,.2);
+    border-bottom: .3rem dashed rgba(0,0,0,.2);
+    text-align: center;
+    font-size: 4rem;
+    padding:1 1.5rem;
+    margin: 30px;
+    color:#333;
+}
+
+
+.checkout h3 span{
+    color:crimson;
+}
+
+.checkout .paymentDetails h3{
+    
+        border-top: .3rem dashed rgba(0,0,0,.2);
+        border-bottom: .3rem dashed rgba(0,0,0,.2);
+        text-align: center;
+        font-size: 3rem;
+        padding:1 1.5rem;
+        margin: 30px;
+        color:#333;
+    
+}
+
+#orders{
+    list-style:none;
+    position: relative;
+    text-align: center; 
+}
+
+
+
+#orders .meal img{
+    max-width: 200px;
+    max-height: 180px;
+    object-fit: contain;
+    margin: 20px 30px 20px 30px;
+     
+}
+
+#orders .meal{
+    margin: 20px;
+    background-color: white;
+    font-size: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
+    display: inline-block;
+    width: 300px;
+    height: 450px;
+}
+
+#total_price {
+    font-size: 60px;
+    word-spacing: 3px;
+    margin: 20px 20px 30px 200px;
+
+}
+
+#orders .food_name h3{
+    padding: 10px 5px 2px 30px;
+    color: red;
+    font-family: 'Gruppo', cursive;
+    font-weight: 900;
+    word-spacing: 3px;
+    font-size: 20px;
+}
+
+#orders .food_restaurant {
+    padding: 10px 5px 2px 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    word-spacing: 3px;
+    font-size: 20px;
+}
+
+#orders .food_price {
+    padding: 10px 5px 2px 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 900;
+    word-spacing: 3px;
+    font-size: 15px;
+}
+
+#orders .order_quantity {
+    padding: 10px 5px 2px 30px;
+    font-family: 'Times New Roman', Times, serif;
+    word-spacing: 3px;
+    font-size: 15px;
+}
+
+
+
+/* _________________________Credit Card Payment____________________ */
+
+
+.paymentDetails h2{
+    text-align:left;
+}
+
+.paymentDetails {
+    box-sizing: border-box;
+}
+
+.paymentDetails .error {
+    color: red;
+    border-color: red;
+}
+
+.paymentDetails .row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    list-style: none;
+}
+
+.paymentDetails .col-25 {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+}
+
+.paymentDetails .col-50 {
+    -ms-flex: 50%; /* IE10 */
+    flex: 50%;
+}
+
+.paymentDetails .col-75 {
+    -ms-flex: 75%; /* IE10 */
+    flex: 75%;
+}
+
+.paymentDetails .col-25,.col-50,.col-75 {
+    padding: 0 16px;
+}
+
+.paymentDetails .container {
+    background-color: #FFFFFF;
+    padding: 3px 18px 13px 18px;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    box-shadow: 0 0 2rem 0 rgba(168, 180, 194, 0.37);
+}
+
+
+.paymentDetails input[type=text] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: 1px solid rgb(130, 26, 26);
+    border-radius: 1px;
+}
+
+.paymentDetails label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+.paymentDetails .icon-container {
+    margin-bottom: 20px;
+    padding: 7px 0;
+    font-size: 24px;
+}
+
+.paymentDetails .btn {
+    background-color: #01BAEF;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+    box-shadow: 0 0 1rem 0 rgba(99, 123, 150, 0.329);
+
+}
+
+.paymentDetails .btn:hover {
+    background-color: #0CBABA;
+}
+
+.paymentDetails a {
+    color: #2196F3;
+}
+
+.paymentDetails hr {
+    border: 1px solid lightgrey;
+}
+
+.paymentDetails span.price {
+    float: right;
+    color: grey;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns 
+    stack on top of each other instead of next to each other (also change the direction 
+    - make the "cart" column go on top) 
+*/
+@media (max-width: 800px) {
+    .paymentDetails .row {
+        flex-direction: column-reverse;
+    }
+    .paymentDetails .col-25 {
+        margin-bottom: 20px;
+    }
+}
+
+
+/*_______________________Comment Section__________________ */
+
+
+
+.comment-box .row {
+    display: flex;
+    background:#fff;
+    margin:2rem 0;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.3);
+    border-radius: 1rem;
+    width: 1000px;
+    height:520px;
+    position: relative;
+    top: 20%;
+    left:15%;
+}
+
+.comment-box .doc {
+    border-top-left-radius: 30px !important; 
+    border-bottom-left-radius: 30px !important;
+    object-fit: contain;
+    
+}
+
+.comment-box h3{
+    font-size: 30px;
+    margin-bottom:15px; 
+}
+
+.comment-box input{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid rgb(229, 236, 167)
+}
+
+
+.comment-box textarea{
+    width: 100%;
+    height: 200px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(229, 236, 167)
+}
+
+.comment-box input:focus {
+    border: 1px solid rgba(0,0,0,0.2);
+    outline: 0;
+}
+
+.comment-box textarea:focus {
+    border: 1px solid rgba(0,0,0,0.2);
+    outline: 0;
+}
+
+.comments .leftimg {
+    width: 100%;
+    float: left;  
+    
+}
+
+.comments .leftimg i{
+    width: 300px;
+    height: 150px; 
+    
+}
+
+.comments .rightPanel {
+    width: 100%;
+    float: right;
+    margin-left: 1%;
+    background-color: white;
+    height: 150px;
+    margin: 8px;
+    border: 1px solid crimson;
+    border-top-left-radius: 30px !important; 
+    border-bottom-left-radius: 30px !important;
+    border-top-right-radius: 30px !important; 
+    border-bottom-right-radius: 30px !important;
+    font-size: 12px;
+
+}
+
+.comments .rightPanel .commentBody{
+    margin-left:30px;
+}
+.comments .rightPanel .cName{
+    color: crimson;
+    font-size: 25px;
+    text-transform: uppercase;
+}
+.comments #AnonymousCommentArea{
+    position: relative;
+    width: 800px;
+    list-style: none;
+    margin: 200px;
+}
+
+@media (max-width:1260px){ 
+
+    .comment-box .row {
+        width: 700px;
+        height:380px;
+    }
+    
+    .comment-box h3{
+        font-size: 30px;
+        margin-bottom:15px; 
+    }
+    
+    .comment-box input{
+        width: 100%;
+        height: 30px;        
+    }
+    
+    
+    .comment-box textarea{
+        width: 100%;
+        height: 100px;
+    }
+      
+}
+
+@media (min-device-width: 330px) and (max-device-width: 990px){ 
+
+    .comment-box .row {
+        width: 300px;
+        height:800px;
+    }
+    
+    .comment-box h3{
+        font-size: 20px;
+        margin-bottom:10px; 
+    }
+    
+    .comment-box input{
+        width: 100%;
+        height: 30px;        
+    }
+
+    .comment-box .doc {
+        border-top-right-radius: 30px !important; 
+        border-bottom-right-radius: 30px !important;
+    }
+    
+    .comment-box textarea{
+        width: 100%;
+        height: 100px;
+    }
+    
+    .comment-box input:focus {
+        border: 1px solid rgba(0,0,0,0.2);
+        outline: 0;
+    }
+    
+    .comment-box textarea:focus {
+        border: 1px solid rgba(0,0,0,0.2);
+        outline: 0;
+    }
+}
+
+
+@media (min-device-width: 550px) and (max-device-width: 1000px){ 
+
+    .comments .leftimg {
+        width: 100%;
+        height: 100px;
+        float: left;  
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    .comments .leftimg i{
+        width: 150px;
+        height: 150px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        
+    }
+
+    .comments .rightPanel {
+        width: 90%;
+        float: right;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        background-color: white;
+        height: 150px;
+        
+        
+
+    }
+
+    .comments .rightPanel .commentBody{
+        margin-left:50px;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+    }
+    .comments #AnonymousCommentArea{
+        width: 500px;
+        margin: 50px;
+    }
+
+}
+
+@media (max-device-width: 550px){ 
+
+    .comments .leftimg {
+        width: 100%;
+        height: 100px;
+        float: left;  
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+
+    .comments .leftimg i{
+        width: 150px;
+        height: 150px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        
+    }
+
+    .comments .rightPanel {
+        width: 90%;
+        float: right;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+        background-color: white;
+        height: 400px;
+        font-size: 15px;
+        
+
+    }
+
+    .comments .rightPanel .commentBody{
+        margin-left:10px;
+        margin-bottom: 5px;
+        padding-bottom: 5px;
+    }
+    .comments #AnonymousCommentArea{
+        width: 300px;
+        margin: 50px;
+    }
+
+}
+/* _______________________Footer Section________________________ */
+
+
+.footer{
+    background:#282727;
+    padding:1rem 7%;
+}
+
+.footer .back-to-top{
+    text-align: center;
+    position: relative;
+    top: -4.5rem;
+}
+
+.footer .back-to-top a{
+    font-size: 70px;
+    background-color: #282727;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 50%;
+}
+
+.footer .box-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .box-container .box{
+    flex:1 1 25rem;
+    margin:2rem;
+}
+
+.footer .box-container .box h3{
+    font-size: 2.5rem;
+    color:#fff;
+    padding:1rem 0;
+    font-weight: normal;
+}
+
+.footer .box-container .box p{
+    font-size: 1.7rem;
+    color:#eee;
+    padding:1rem 0;
+}
+
+.footer .box-container .box a{
+    font-size: 1.7rem;
+    color:#eee;
+    padding:1rem 0;
+    display: block;
+}
+
+.footer .box-container .box a:hover{
+    color:crimson;
+}
+
+.footer .box-container .box p i{
+    padding-right: .5rem;
+    color:crimson;
+}
+
+.footer .credit{
+    font-size: 2rem;
+    text-align: center;
+    border-top: .2rem solid rgba(255,255,255,.7);
+    padding:2rem 1rem;
+    font-weight: normal;
+    letter-spacing: .1rem;
+    color:#fff;
+}
+
+.footer .credit a{
+    color:crimson;
+}
+
+
+/* ______________404 Error_____________ */
+
+.fourOfour{
+   align-items: center;
+   text-align: center;
+   justify-content: center;
+}
+
+.fourOfour h1{
+    font-size: 200px;
+}
+
+.fourOfour h2{
+    font-size: 100px;
+}

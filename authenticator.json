@@ -1,0 +1,51 @@
+[
+  {
+    "user": "William",
+    "userEmail": "william@example.com",
+    "password": "123",
+    "prevOrders": [
+      "Ham burger with Cheese and Patties",
+      "Chicken burger",
+      "Zaps Classic Tacos",
+      "Beef and mozarrela Sandwich",
+      "Co-ops classic club sandwich",
+      "Nandos Grilled chicken and fries"
+    ]
+  },
+  {
+    "user": "Selorm",
+    "userEmail": "sel@example.com",
+    "password": "asd",
+    "prevOrders": [
+      "Ham burger with Cheese and Patties",
+      "Chicken burger",
+      "Ultimate triple spicy jerk chicken burger",
+      "Extra Cheesy Classic",
+      "Spicy Stir Fry Noodles",
+      "Oat Porridge with fruits",
+      "Ultimate garden feast"
+    ]
+  },
+  {
+    "user": "toe",
+    "userEmail": "toe@example.com",
+    "password": "zxc",
+    "prevOrders": []
+  },
+  {
+    "user": "Mark",
+    "userEmail": "mark@example.com",
+    "password": "mak",
+    "prevOrders": []
+  },
+  {
+    "user": "asd",
+    "userEmail": "asd",
+    "password": "asd",
+    "prevOrders": [
+      "Zizzi Special Pepperoni Pizza",
+      "Zizzi Special Pepperoni Pizza",
+      "Garden Party Classic Vegetarian Pizza"
+    ]
+  }
+]
