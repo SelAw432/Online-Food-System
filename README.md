@@ -1,11 +1,20 @@
-STUDENT ID: 000884285/ KXMZ59
-PROGRAMMING GOLD SERVER SIDE SUMMATIVE ASSIGNMENT
+# Online Food Ordering & Delivery System
 
-This Website is a food delivery website where you can order a variety of dishes experlty chosen from the very best restaurants.
-Below are the steps required to navigate the website.
+## Project Overview
 
+This Website is a food delivery website where you can order a variety of dishes.
 
-The Zip folder when unzipped contains the following. The main home page is 'index.html'.  There are 5 futher subfolders
+**Contents**
+
+- Features:
+    1. Allows users to order food from a variety of restaurants.
+    2. Enables users to create an account or login as a guest
+    3. JSON Database 
+    4. User Authentication 
+    5. Stores logged in users previous orders and displays on website
+    6. Responsive Webpage
+
+The main home page is 'index.html'.  There are 5 futher subfolders
 + API - which is named app.js.
 + client - which contains all the client side pages. 
 + JSON file- which serves as the database for the User Authentication and for Storing Customer Comments. 
